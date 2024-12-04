@@ -1,4 +1,6 @@
 {
+  "docs": [
+  {
     "id": "Littleremedies",
     "text": "Privacy Notice
     Effective Date: June 1, 2024
@@ -134,8 +136,8 @@
     
     If we are acting as a data processor or service provider, we will forward your request to the applicable data controller, and reasonably assist the controller in honoring your request. We do not discriminate against any individual for exercising his or her data rights.",
     "summary": "We can collect contact information (name, mailing address, email address, telephone number, gender, age/date of birth, similar information). If you seek employment, we can collect background, work experience, and education. If you reach out to our call center for a complaint or feedback, we can collect location, your feedback, and the sound of your voice. If you send pictures to us, we can collect your image. We also collect a variety of personal data automatically, including device and browser data, geolocation, and website activity through pixel tags (i.e. the pages you viewed, the links you click, and other actions). We also collect your IP address. We can also receive data from third parties. We use all of this data to improve user experience and advertising. We can share your data with third parties who collaborate with us, such as cloud-infrastructure companies and direct marketers. We put various safeguards on your data. We employ cookies on our site (which you can disable). You must be 18 years or older to use this site. We operate internationally, but transfer most data to the United States. If you live in California, Connecticut, Colorado, Utah, and Virginia, you can request to view your stored data, under certain conditions."   
-},
-{
+  },
+  {
     "id": "Michael west",
     "text": "Michael West Media – Privacy Policy
 
@@ -181,14 +183,14 @@
     
     Or in writing to Michel West Media, 23 Belgrave St, Manly NSW 2095.",
     "summary": "You can view all aspects of this website without providing personal information. However, for access to weekly email we collect your name and email address. If you donate/subscribe we collect your first and last name, email and payment information. Subscriptions are charged monthly and can be cancelled anytime. All information collected is encrypted. We can also collect your information in relation to a story or investigation occasionally (only with express consent). We will not share your information with any third parties, except for the purposes of collecting payments. We collect non-personally identifiable information such as device and browser type, version and language, pages viewed, page access times, among others. We can make changes to this policy at any time. You can let us know if you want to view your stored personal data."
-},
-{
+  },
+  {
     "id": "Sicpers",
     "text": "Privacy Statement
     Structure and Interpretation of Computer Programmers has some minimal server-side tracking to enable service, and uses cookies for login sessions (but only the author can log in, so this doesn’t refer to you). We do not host advertising nor monetise data about our audience in any way.",
     "summary": "There is some minimal server-side tracking. We do not host advertising or monetize data in any way."
-},
-{
+  },
+  {
     "id": "Foss torrents",
     "text": "Privacy Policy
     Introduction
@@ -221,8 +223,8 @@
     Data Security
     All records containing personal information are considered to be proprietary and are afforded confidential treatment at all times. FOSS Torrents is committed to the safety and security of your personal data and the information that you share with us and with the public. We treat your personal safety and safety from harassment as top organizational priorities. At FOSS Torrents we consider it necessary to pursue these legitimate interests in order to keep our community, you and your information safe from spam, harassment, intellectual property infringement, identity theft, and the scraping and unlawful collection of your information.",
     "summary": "We will use your information in Canada and in any country in which we operate. We store networking information such as IP address in secure logs. This website employs cookies to serve you certain advertising content. We collected anonymized Google Analytics data. You can request to delete all personal information, except for IP address which is required for security purposes. You have the right to see your collected data. We are committed to the safety of your data."
-},
-{
+  },
+  {
     "id": "Myperfectcolor",
     "text": "Privacy Policy
     What information do we collect?
@@ -288,8 +290,8 @@
     
     By using our site, you consent to our privacy policy.",
     "summary": "You can visit our site anonymously, but when placing an order we can collect information about your name, e-mail address, mailing address, phone number, credit card information or other information. We also collect information about gift recipients, but it is not used for marketing purposes. We employ cookies on our site. We use your information to personalize your site experience and give you better service. We release your information to third parties who assist us in operating our website, conducting our business, or servicing you, as long as the information is kept confidential. You can delete all personal information from our database, but we can maintain information about individual sales transactions."
-},
-{
+  },
+  {
     "id": "National center on improving literacy", 
     "text": "Privacy Policy
     We are committed to protecting the right to privacy of our website members and subscribers. Thus, we will not share, sell, or otherwise distribute your private information and email to a third party, except as required by law.
@@ -7624,4 +7626,5 @@
 
     • Post: Rock Internet, S.L., with domicile at Calle Barquillo, 8 planta 2ª izq., 28004 Madrid, Spain.",
     "summary":
+  }]
 }
