@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<span>Data file:</span><input type="file" id="dataFile" accept=".json" style="margin-left: 10px"/>
+	<span>Labels file:</span><input type="file" id="labelsFile" accept=".json" style="margin-left: 10px"/>
+	<div style="margin-top: 20px">
+		<span>Index: </span><input type="number" id="index">
+	</div>
+	<div id="chunk" style="margin-top: 20px"></div>
+	<div style="margin-top: 20px">
+		<select id="important">
+			<option value="yes">Important</option>
+			<option value="no">Not Important</option>
+		</select>
+		<input type="text" id="newLabel" placeholder="New Label">
+		<select id="labels"></select>
+		<button id="next">Next</button>
+		<button id="skip">Skip</button>
+		<button id="saveLabels">Save labels</button>
+		<button id="saveData">Save data</button>
+	</div>
+</body>
+</html>
+
+<script type="text/javascript">
+data = null
+policyIndex = 0
+chunkIndex = 0
+chunkText = document.getElementById('chunk')
+labels = []
+
+const dataFile = document.getElementById('dataFile')
+dataFile.addEventListener('change', () => {
+  const file = dataFile.files[0]
+  if (file && file.type === 'application/json') {
+    const reader = new FileReader()
+
+    reader.onload = event => {
+      data = JSON.parse(event.target.result)
+    }
+  	reader.readAsText(file)
+  }
+})
+
+const labelsFile = document.getElementById('labelsFile')
+labelsFile.addEventListener('change', () => {
+  const file = labelsFile.files[0]
+  if (file && file.type === 'application/json') {
+    const reader = new FileReader()
+
+    reader.onload = event => {
+      labels = JSON.parse(event.target.result)
+      for (const i in labels) {
+      	const newOption = document.createElement('option')
+				newOption.value = labels[i]
+				newOption.textContent = labels[i]
+				labelsSelect.appendChild(newOption)
+      }
+    }
+  	reader.readAsText(file)
+  }
+})
+
+index = document.getElementById('index')
+index.addEventListener('change', () => {
+	policyIndex = parseInt(index.value)
+	chunkIndex = 0
+	chunkText.textContent = data[policyIndex].chunks[chunkIndex].text
+})
+
+newLabel = document.getElementById('newLabel')
+labelsSelect = document.getElementById('labels')
+newLabel.addEventListener('change', () => {
+	labels.push(newLabel.value)
+	const newOption = document.createElement('option')
+	newOption.value = newLabel.value
+	newOption.textContent = newLabel.value
+	labelsSelect.appendChild(newOption)
+	labelsSelect.value = newLabel.value
+	newLabel.value = ''
+})
+
+document.getElementById('saveLabels').addEventListener('click', () => {
+	saveJsonFile('labels.json', labels)
+})
+
+document.getElementById('saveData').addEventListener('click', () => {
+	saveJsonFile('classifier_data.json', data)
+})
+
+function saveJsonFile(filename, jsonData) {
+  const jsonString = JSON.stringify(jsonData, null, 2)
+  const blob = new Blob([jsonString], { type: 'application/json' })
+  const url = URL.createObjectURL(blob)
+
+  const a = document.createElement('a')
+  a.href = url
+  a.download = filename
+  a.click()
+
+  URL.revokeObjectURL(url)
+}
+
+const important = document.getElementById('important')
+document.getElementById('next').addEventListener('click', () => {
+	data[policyIndex].chunks[chunkIndex].label = labelsSelect.value
+	data[policyIndex].chunks[chunkIndex].important = important.value == 'yes' ? true : false
+
+	const numChunks = data[policyIndex].chunks.length
+	if (chunkIndex < numChunks - 1) {
+		chunkIndex++
+		chunkText.textContent = data[policyIndex].chunks[chunkIndex].text
+	} else {
+		alert('Next Policy')
+		index.value = parseInt(index.value) + 1
+		policyIndex++
+		chunkIndex = 0
+		chunkText.textContent = data[policyIndex].chunks[chunkIndex].text
+	}
+})
+
+document.addEventListener('keypress', e => {
+  if (e.key == '1') {
+  	important.value = 'yes'
+  }
+  if (e.key == '2') {
+  	important.value = 'no'
+  }
+})
+
+document.getElementById('skip').addEventListener('click', () => {
+	policyIndex++
+	chunkIndex = 0
+})
+</script>
+
+
+
+
+
+
+
+
